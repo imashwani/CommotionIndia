@@ -39,15 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-//    root= inflater.inflate(R.layout.fragment_home, container, false);
-//
-//    viewPager = root.findViewById(R.id.viewpager_home);
-//       viewPager.setAdapter(new HomePageAdapter(getActivity().getSupportFragmentManager()));
-//
-//    tabLayout = (TabLayout) root.findViewById(R.id.tabs_home);
-//        tabLayout.setupWithViewPager(viewPager);
-//
-//        return root;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
