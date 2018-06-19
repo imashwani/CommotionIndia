@@ -1,4 +1,4 @@
-package com.example.ashwani.commotionindia.Fragments;
+package GenderFragment;
 
 
 import android.os.Bundle;
@@ -9,14 +9,13 @@ import android.view.ViewGroup;
 
 import com.example.ashwani.commotionindia.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeWhatsNewFragment extends Fragment {
+public class GenderWorkshopFragment extends Fragment {
 
 
-    public HomeWhatsNewFragment() {
+    public GenderWorkshopFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +24,7 @@ public class HomeWhatsNewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_whats_new, container, false);
+        return inflater.inflate(R.layout.fragment_gender_workshop, container, false);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.ashwani.commotionindia.Fragments;
+package com.example.ashwani.commotionindia.HomeFragments;
 
 
 import android.os.Bundle;

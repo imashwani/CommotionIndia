@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.ashwani.commotionindia.Fragments.HomeFragment;
+import com.example.ashwani.commotionindia.HomeFragments.HomeFragment;
+
+import GenderFragment.GenderFragment;
 
 public class MainActivity extends AppCompatActivity {
    FragmentManager fragmentManager;
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_dashboard:
+                    fragmentTransaction.add(R.id.fragment_container, new GenderFragment());
+                    fragmentTransaction.commit();
+
                     return true;
                 case R.id.navigation_notifications:
                     return true;
