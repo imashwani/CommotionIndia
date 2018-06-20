@@ -7,37 +7,47 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.ashwani.commotionindia.HomeFragments.HomeFragment;
 
+import EducationFragment.EducationFragment;
+import ForyouFragment.ForyouFragment;
 import GenderFragment.GenderFragment;
+import MediaFragment.MediaFragment;
 
 public class MainActivity extends AppCompatActivity {
+    FragmentTransaction fragmentTransaction;
    FragmentManager fragmentManager;
-
-    private TextView mTextMessage;
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             fragmentManager=getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction = fragmentManager.beginTransaction();
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                   fragmentTransaction.add(R.id.fragment_container,new HomeFragment());
+                    fragmentTransaction.replace(R.id.fragment_container, new HomeFragment());
                     fragmentTransaction.commit();
 
                     return true;
-                case R.id.navigation_dashboard:
-                    fragmentTransaction.add(R.id.fragment_container, new GenderFragment());
+                case R.id.navigation_education:
+                    fragmentTransaction.replace(R.id.fragment_container, new EducationFragment());
                     fragmentTransaction.commit();
 
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_gender:
+                    fragmentTransaction.replace(R.id.fragment_container, new GenderFragment());
+                    fragmentTransaction.commit();
+                    return true;
+                case R.id.navigation_media:
+                    fragmentTransaction.replace(R.id.fragment_container, new MediaFragment());
+                    fragmentTransaction.commit();
+                    return true;
+                case R.id.navigation_foryou:
+                    fragmentTransaction.replace(R.id.fragment_container, new ForyouFragment());
+                    fragmentTransaction.commit();
                     return true;
             }
             return false;
@@ -50,9 +60,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
+
+        fragmentTransaction.commit();
     }
+
 
 }
