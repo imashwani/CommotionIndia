@@ -8,12 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.example.ashwani.commotionindia.EducationFragment.EducationFragment;
+import com.example.ashwani.commotionindia.ForyouFragment.ForyouFragment;
+import com.example.ashwani.commotionindia.GenderFragment.GenderFragment;
 import com.example.ashwani.commotionindia.HomeFragments.HomeFragment;
-
-import EducationFragment.EducationFragment;
-import ForyouFragment.ForyouFragment;
-import GenderFragment.GenderFragment;
-import MediaFragment.MediaFragment;
+import com.example.ashwani.commotionindia.MediaFragment.MediaFragment;
 
 public class MainActivity extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
