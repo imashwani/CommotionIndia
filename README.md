@@ -1,4 +1,4 @@
 # CommotionIndia
 
-task for tommorow:
--make fragments work and impelent backstack by making making static FragmentManager and get its instance only once in MainActivty
+ <!--this is included so that on configChanges the activity is not recreated; add the below lines into Manifests files-->
+    android:configChanges="orientation|keyboardHidden|screenSize"
