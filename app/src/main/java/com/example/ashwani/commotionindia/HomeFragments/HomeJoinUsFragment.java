@@ -12,12 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ashwani.commotionindia.R;
+import com.example.ashwani.commotionindia.YoutubeConfig;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 public class HomeJoinUsFragment extends Fragment {
-    private final String API_KEY = "AIzaSyB3PykS5VflaWqDu57TWioMdWE71T_7NBA".trim();
     Context context = null;
     View rootView;
     //Youtube Listener
@@ -47,7 +47,7 @@ public class HomeJoinUsFragment extends Fragment {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youtubeFragment.initialize(API_KEY, monInitializedListener);
+                youtubeFragment.initialize(YoutubeConfig.getYoutubeApiKey(), monInitializedListener);
             }
         });
 
