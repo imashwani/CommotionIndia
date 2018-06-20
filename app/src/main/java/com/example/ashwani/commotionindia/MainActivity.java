@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.example.ashwani.commotionindia.EducationFragment.EducationFragment;
 import com.example.ashwani.commotionindia.ForyouFragment.ForyouFragment;
@@ -15,8 +16,32 @@ import com.example.ashwani.commotionindia.HomeFragments.HomeFragment;
 import com.example.ashwani.commotionindia.MediaFragment.MediaFragment;
 
 public class MainActivity extends AppCompatActivity {
+    FrameLayout fragmentContainer;
     FragmentTransaction fragmentTransaction;
    FragmentManager fragmentManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        fragmentContainer = findViewById(R.id.fragment_container);
+
+
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+
+        //if savedInstanceSate is null then this is a fresh activity
+        if (savedInstanceState == null) {
+            fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
+            fragmentTransaction.commit();
+        }
+
+    }
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -53,20 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, new HomeFragment());
-
-        fragmentTransaction.commit();
-    }
 
 
 }

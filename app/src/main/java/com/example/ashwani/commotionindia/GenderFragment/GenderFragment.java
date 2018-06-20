@@ -16,6 +16,8 @@ import com.example.ashwani.commotionindia.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import GenderFragment.GenderBlogsFragment;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -47,7 +49,7 @@ public class GenderFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new GenderFragment.GenderBlogsFragment(), "Blogs");
+        adapter.addFragment(new GenderBlogsFragment(), "Blogs");
         adapter.addFragment(new GenderResearchFragment(), "Research");
         adapter.addFragment(new GenderWorkshopFragment(), "Workshop");
         viewPager.setAdapter(adapter);
